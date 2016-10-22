@@ -2,15 +2,18 @@ import React from 'react';
 
 class ToEatItem extends React.Component {
   render () {
-    const {name, eaten, onCheck} = this.props;
+    const {name, eaten, onCheck, onRemove} = this.props;
 
     return (
-      <li style={styles.item} onClick={onCheck}>
+      <li style={styles.item}>
         <span>{name}</span>
-        <label>
-          eaten:
-          <input type='checkbox' checked={eaten}></input>
-        </label>
+        <div>
+          <label>
+            eaten:
+            <input onClick={onCheck} type='checkbox' checked={eaten}></input>
+          </label>
+          <button onClick={onRemove}>remove</button>
+        </div>
       </li>
     );
   }
