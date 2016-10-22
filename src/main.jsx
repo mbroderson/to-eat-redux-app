@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import store from 'stores';
-import ToEatContainer from 'components/toeat-container';
+import ToEatLayout from 'components/toeat-layout';
 
 class App extends React.Component {
   render () {
@@ -9,7 +9,7 @@ class App extends React.Component {
       <Provider store={store}>
         <div>
           <h1>To Eat App</h1>
-          <ToEatContainer />
+          <ToEatLayout />
         </div>
       </Provider>
     );

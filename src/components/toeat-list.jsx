@@ -8,10 +8,10 @@ class ToEatList extends React.Component {
     return (
       <ul style={styles.list}>
         {
-          toeats.map((te, index) => {
+          toeats.map((te) => {
             return <ToEatItem
-                      onCheck={() => onCheckItem(index)}
-                      key={`item-${index}`}
+                      onCheck={() => onCheckItem(te.name)}
+                      key={`item-${te.name}`}
                       {...te} />
           })
         }
