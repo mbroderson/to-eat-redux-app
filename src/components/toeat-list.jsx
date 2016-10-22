@@ -2,6 +2,10 @@ import React from 'react';
 import ToEatItem from './toeat-list-item';
 
 class ToEatList extends React.Component {
+  componentDidMount(){
+    this.props.fetchList();
+  }
+
   render () {
     const {toeats, onCheckItem} = this.props;
 

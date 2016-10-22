@@ -1,10 +1,6 @@
 import _ from 'lodash'
 
-const defaultState = [
-  {name: 'pasta', eaten: false},
-  {name: 'burger', eaten: false},
-  {name: 'szwajcar', eaten: false}
-];
+const defaultState = [];
 
 const toeats = (state = defaultState, action) => {
   switch (action.type) {
@@ -19,6 +15,8 @@ const toeats = (state = defaultState, action) => {
         }
       });
       return newState;
+    case 'FETCH_TOEATS_SUCCESS':
+      return action.toeats;
     default:
       return state;
   }
