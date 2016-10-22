@@ -1,28 +1,12 @@
 import React from 'react';
 import update from 'react-addons-update';
-import ToEatList from './toeat-list';
-import ToEatForm from './toeat-form';
-
-const toeats = [
-  {name: 'pasta', eaten: false},
-  {name: 'burger', eaten: false},
-  {name: 'szwajcar', eaten: false}
-];
+import ToEatList from 'containers/toeat-list';
+import ToEatForm from 'containers/toeat-form';
 
 class ToEatContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {toeats: toeats};
-    this._addToEat = this._addToEat.bind(this);
     this._checkItem = this._checkItem.bind(this);
-  }
-
-  _addToEat(toeatName) {
-    const newToeat = {name: toeatName, eaten: false};
-
-    this.setState({
-      toeats: [...this.state.toeats, newToeat]
-    });
   }
 
   _checkItem(index) {
@@ -36,8 +20,8 @@ class ToEatContainer extends React.Component {
   render () {
     return (
       <div>
-        <ToEatForm onSubmit={this._addToEat} />
-        <ToEatList toeats={this.state.toeats} onCheckItem={this._checkItem} />
+        <ToEatForm />
+        <ToEatList onCheckItem={this._checkItem} />
       </div>
     );
   }
